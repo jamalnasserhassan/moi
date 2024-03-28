@@ -1,0 +1,204 @@
+.Sidebar{
+	&__order{
+		&.order--history{
+			.Sidebar__content{
+				transform: none;
+				opacity: 0;
+				pointer-events: none;
+				z-index: -9999;
+				&-scroll{
+					padding: rem(30px);
+					@media (max-width: 991px) {
+						padding: rem(10px);
+					}
+				}
+				.Sidebar__history{
+					padding: 0;
+					margin: 0;
+					list-style-type: none;
+					display: flex;
+					flex-direction: column;
+					li{
+						position: relative;
+						width: rem(313px);
+						margin: 0 auto;
+						margin-bottom: rem(40px);
+						background-color: $light;
+						border: rem(1.21px) solid #F3F3F1;
+						border-radius: rem(14px);
+						min-height: rem(100px);
+						max-width: 100%;
+						&:last-of-type{
+							.arrow{
+								display: none;
+							}
+						}
+						&.is--approved{
+							.arrow{
+								color: #15B786;
+							}
+							.label{
+								background-color: rgba(0, 196, 140, 0.22);
+							}
+						}
+						&.is--canceled{
+							.arrow{
+								color: #CF2543;
+							}
+							.label{
+								background-color: rgba(207, 37, 67, 0.2);
+							}
+						}
+						&.is--pending{
+							.arrow{
+								color: #EAAF3A;
+							}
+							.label{
+								background-color: rgba(234, 175, 58, 0.3);
+							}
+						}
+						.arrow{
+							position: absolute;
+							left: 50%;
+							transform: translate(-50%);
+							height: rem(24px);
+							bottom: rem(-35px);
+							svg{
+								width: 100%;
+								height: 100%;
+								object-fit: contain;
+								object-position: center;
+							}
+						}
+					}
+					&-top{
+						width: 100%;
+						border-bottom: rem(1px) solid #F0F0F5;
+						margin-bottom: rem(25px);
+						padding: rem(40px) rem(40px) rem(25px);
+						@media (max-width: 991px) {
+							padding: rem(40px) rem(20px) rem(25px);
+						}
+						.info{
+							display: inline-flex;
+							align-items: center;
+							margin: 0 auto;
+							.avatar{
+								width: rem(42px);
+								height: rem(42px);
+								border-radius: rem(50px);
+								overflow: hidden;
+								margin-left: rem(15px);
+								svg{
+									width: 100%;
+									height: 100%;
+									object-fit: contain;
+									object-position: center;
+								}
+							}
+							span{
+								display: block;
+								width: 100%;
+								margin: 0;
+								padding: 0;
+								&.title{
+									font-size: rem(18px);
+									font-weight: 600;
+									color: black;
+								}
+								&.desc{
+									font-size: rem(14px);
+									font-weight: 300;
+									color: #505052;
+									margin-top: rem(1px);
+								}
+							}
+						}
+						.label__container{
+							margin-right: rem(50px);
+							.label{
+								font-size: rem(12px);
+								font-weight: 400;
+								border-radius: rem(200px);
+								display: inline-flex;
+								align-items: center;
+								justify-content: center;
+								text-align: center;
+								height: rem(35px);
+								padding: 0 rem(42px);
+								margin-top: rem(8px);
+							}
+						}
+					}
+					&-bottom{
+						.comment{
+							border-radius: rem(20px);
+							background-color: #F7F7F9;
+							padding: rem(20px) rem(15px) 0;
+							@media (max-width: 991px) {
+								padding: rem(20px) rem(15px) 0;
+							}
+							p{
+								margin: 0;
+								font-size: rem(12px);
+								font-weight: 400;
+								margin-bottom: rem(10px);
+							}
+						}
+						.comment__container{
+							padding: 0 rem(30px) rem(20px);
+							@media (max-width: 991px) {
+								padding: 0 rem(15px) rem(20px);
+							}
+						}
+						ul{
+							background-color: transparent;
+							height: auto;
+							min-height: unset;
+							border: 0 none;
+							padding: 0;
+							padding-bottom: rem(20px);
+							margin: 0;
+							list-style-type: none;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							li{
+								width: auto;
+								background-color: transparent;
+								height: auto;
+								min-height: unset;
+								border: 0 none;
+								padding: 0;
+								margin: 0;
+								margin-left: rem(20px);
+								display: inline-flex;
+								align-items: center;
+								color: black;
+								.date,
+								.time{
+									display: inline-flex;
+									align-items: center;
+									font-size: rem(12px);
+									font-weight: 400;
+									svg{
+										margin-left: rem(10px);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.is--open{
+		&.order--history{
+			.Sidebar__content{
+				opacity: 1;
+				pointer-events: initial;
+				z-index: 9999;
+			}
+		}
+	}
+}

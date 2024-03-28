@@ -1,0 +1,123 @@
+.Select{
+	width: 100%;
+	display: block;
+	&__label{
+		font-size: rem(14px);
+		font-weight: 600;
+		margin: 0;
+		padding: 0;
+		margin-bottom: rem(6px);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		span{
+			font-size: rem(12px);
+			font-weight: 400;
+			color: #525B64;
+		}
+	}
+	select{
+		width: 100%;
+		display: block;
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%2367717A' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: left rem(15px) center;
+		background-size: rem(10px);
+		appearance: none;
+		outline: 0 none;
+		padding-right: rem(15px);
+		padding-left: rem(35px);
+		border-radius: rem(8px);
+		font-size: rem(12px);
+		font-weight: 400;
+		border: rem(1px) solid $border-color;
+		color: $dark;
+		height: rem(50px);
+		box-shadow: none;
+		cursor: pointer;
+		color: $dark;
+
+		&::-ms-expand {
+			display: none;
+		}
+		option{
+			color: $dark;
+			&::checked{
+				color: $light;
+				background-color: $primary;
+			}
+		}
+		&.is--round,
+		&.is--small{
+			display: inline-block;
+			width: auto;
+			border-radius: rem(12px);
+			height: rem(35px);
+			box-shadow: 0 rem(7px) rem(10px) rgba(0, 0, 0, 0.03);
+			@media (max-width: 991px) {
+				width: 100%;
+			}
+		}
+		&.is--round{
+			border-radius: rem(35px);
+			@media (max-width: 991px) {
+				width: auto;
+			}
+		}
+	}
+	&--round,
+	&--small{
+		display: inline-block;
+		width: auto;
+		@media (max-width: 991px) {
+			width: 100%;
+		}
+	}
+	&--filter{
+		select{
+			padding: 0 rem(15px) 0 rem(33px) ;
+			display: inline-block;
+			width: auto;
+			color: #292D32;
+			border-color: #EDEDED;
+			border-radius: rem(12px);
+			height: rem(35px);
+			box-shadow: 0 rem(7px) rem(10px) rgba(0, 0, 0, 0.03);
+			@media (max-width: 991px) {
+				width: 100%;
+			}
+			&::placeholder{
+				font: rem(12px);
+				font-weight: 300;
+				color: #292D32;
+			}
+		}
+	}
+	&--round{
+		@media (max-width: 991px) {
+			width: auto;
+		}
+	}
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.Select.Select--large select,
+	.Select.Select--medium select{
+		background-size: rem(200px);
+		background-position: -72px center;
+	}
+	.Select.Select--small select{
+		background-size: rem(34px);
+		background-position: left center;
+	}
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.Table select,
+	.Select--filter select{
+		background-size: rem(25px);
+		background-position: rem(8px) center;
+	}
+}

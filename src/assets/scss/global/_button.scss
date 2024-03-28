@@ -1,0 +1,583 @@
+.Button {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: rem(200px);
+	&:not(span){
+		cursor: pointer;
+	}
+
+	&__small {
+		padding: rem(10px) rem(18px);
+		font-size: rem(14px);
+		font-weight: 600;
+
+		&.Button__arrow {
+			span {
+				margin-right: rem(10px);
+				height: rem(16px);
+				width: rem(16px);
+			}
+			svg {
+				height: rem(16px);
+				width: rem(16px);
+				transition: transform 250ms ease-in-out;
+			}
+			&:hover{
+				svg{
+					transform: rotate(30deg);
+				}
+			}
+		}
+	}
+
+	&__xs {
+		padding: rem(6px) rem(22px);
+		font-size: rem(11px);
+		font-weight: 300;
+	}
+
+	&__medium {
+		padding: rem(15px) rem(30px);
+		font-size: rem(16px);
+		font-weight: 600;
+
+		&.Button__arrow {
+			span {
+				margin-right: rem(10px);
+				height: rem(18px);
+				width: rem(18px);
+			}
+			svg {
+				height: rem(18px);
+				width: rem(18px);
+				transition: transform 250ms ease-in-out;
+			}
+			&:hover{
+				svg{
+					transform: rotate(30deg);
+					-ms-transform: rotate(30deg);
+					transform-origin: center;
+					-ms-transform-origin: center;
+				}
+			}
+		}
+	}
+
+	&__form {
+		padding: rem(14px) rem(42px) rem(10px);
+		font-size: rem(15px);
+		font-weight: 600;
+		border-radius: rem(9px);
+		box-shadow: 0px rem(4px) rem(25.2px) 0 rgba(0, 0, 0, 0.03);
+		@media (max-width: 768px) {
+			padding: 0 rem(15px);
+			font-size: rem(12px);
+			text-align: center;
+			height: rem(46px);
+		}
+		&.Button__arrow {
+			span {
+				margin-right: rem(10px);
+				height: rem(14px);
+				width: rem(14px);
+			}
+			svg {
+				height: rem(14px);
+				width: rem(14px);
+				transition: transform 250ms ease-in-out;
+			}
+			&:hover{
+				svg{
+					transform: rotate(30deg);
+					-ms-transform: rotate(30deg);
+					transform-origin: center;
+					-ms-transform-origin: center;
+				}
+			}
+		}
+	}
+
+
+	&__back{
+		border-radius: rem(9px);
+		height: rem(46px);
+		width: rem(52px);
+		background-color: transparent;
+		text-align: center;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin-left: rem(15px);
+		border: 1px solid;
+		svg{
+			width: rem(10px);
+			height: rem(10px);
+		}
+		&.Button__danger{
+			background-color: transparent;
+			border-color: $danger;
+			color: $danger;
+			transition: all 250ms ease-out;
+			&:hover{
+				background-color: $danger;
+				color: $light;
+			}
+		}
+		&.Button__secondary{
+			background-color: transparent;
+			border-color: $secondary;
+			color: $secondary;
+			transition: all 250ms ease-out;
+			&:hover{
+				background-color: $secondary;
+				color: $light;
+			}
+		}
+	}
+
+	&__default{
+		position: relative;
+		border-radius: rem(9px);
+		height: rem(46px);
+		text-align: center;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-size: rem(15px);
+		font-weight: 600;
+		padding: 0 rem(40px);
+		@media (max-width: 768px) {
+			padding: 0 rem(15px);
+			font-size: rem(12px);
+			text-align: center;
+		}
+		&:hover{
+			.icon{
+				background-color: $light;
+				color: $secondary;
+				left: rem(-10px);
+			}
+			.text{
+				margin-left: rem(10px);
+			}
+		}
+		.text{
+			transition: all 250ms ease-in-out;
+		}
+		.icon{
+			position: absolute;
+			left: 0;
+			width: rem(30px);
+			height: rem(30px);
+			display: flex;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: rem(35px);
+			padding: 0;
+			background-color: $secondary;
+			color: $light;
+			margin-right: rem(5px);
+			transition: all 250ms ease-in-out;
+			text-align: center;
+			padding-top: 2px;
+			padding-left: 2px;
+			position: relative;
+			svg{
+				width: rem(17px);
+				height: rem(17px);
+				object-fit: contain;
+				object-position: center;
+			}
+		}
+	}
+
+	&__light {
+		background-color: $light;
+		color: $dark;
+		border: rem(1px) solid $gray-300;
+		transition: all 250ms ease-in-out;
+		&:hover{
+			background-color: $secondary;
+			color: $light;
+			border-color: $secondary;
+		}
+	}
+
+	&__danger {
+		background-color: $danger;
+		color: $white;
+		border: rem(1px) solid $danger;
+		transition: all 250ms ease-in-out;
+		&:hover{
+			background-color: $danger;
+			color: $white;
+			border-color: $danger;
+		}
+	}
+
+	&__outline{
+		&.Button__danger {
+			background-color: $white;
+			color: $danger;
+			border: rem(1px) solid $danger;
+			transition: all 250ms ease-in-out;
+			&:hover{
+				background-color: $danger;
+				color: $white;
+				border-color: $danger;
+			}
+		}
+		&.Button__secondary {
+			background-color: $white;
+			color: $secondary;
+			border: rem(1px) solid $secondary;
+			transition: all 250ms ease-in-out;
+			&:hover{
+				background-color: $secondary;
+				color: $white;
+				border-color: $secondary;
+			}
+		}
+		&.Button__warning{
+			background-color: $white;
+			color: #F05642;
+			border: rem(1px) solid #F05642;
+			transition: all 250ms ease-in-out;
+			&:hover{
+				background-color: #F05642;
+				color: $white;
+				border-color: #F05642;
+			}
+		}
+
+		&.Button__dark{
+			background-color: $white;
+			color: #303031;
+			border: rem(1px) solid #C8C8CE;
+			transition: all 250ms ease-in-out;
+			&:hover{
+				background-color: #303031;
+				color: $white;
+				border-color: #303031;
+			}
+		}
+		@media (max-width: 768px) {
+			padding: 0 rem(15px);
+			font-size: rem(12px);
+			text-align: center;
+			height: rem(46px);
+		}
+	}
+
+	&__icon{
+		padding: rem(10px) rem(47px);
+		border-radius: rem(9px);
+		font-size: rem(16px);
+		font-weight: bold;
+		&.Button__radius{
+			border-radius: rem(200px);
+			padding: rem(10px) rem(15px);
+		}
+		span {
+			margin-left: rem(10px);
+			height: rem(18px);
+			width: rem(18px);
+		}
+		svg {
+			height: rem(18px);
+			width: rem(18px);
+			transition: transform 250ms ease-in-out;
+			fill: none;
+		}
+		&.is--small{
+			span {
+				margin-left: 0;
+				margin-right: rem(10px);
+				height: rem(13px);
+				width: rem(13px);
+			}
+			svg {
+				height: rem(13px);
+				width: rem(13px);
+				transition: transform 250ms ease-in-out;
+				fill: none;
+			}
+		}
+	}
+
+	&__burger{
+		border: 0 none;
+		background-color: transparent;
+		padding: 0;
+		margin: 0;
+		color: #8E9AA0;
+		transition: all 250m ease-in-out;
+		svg{
+			display: block;
+			width: rem(21px);
+			height: rem(28px);
+			object-fit: contain;
+			object-position: center;
+		}
+		&:hover{
+			color: $primary;
+		}
+	}
+
+	&__history{
+		border: 0 none;
+		background-color: transparent;
+		padding: 0;
+		margin: 0;
+		color: #8E9AA0;
+		transition: all 250m ease-in-out;
+		svg{
+			display: block;
+			width: rem(36px);
+			height: rem(36px);
+			object-fit: contain;
+			object-position: center;
+		}
+		&:hover{
+			color: $primary;
+		}
+	}
+
+	&__more{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		font-size: rem(14px);
+		font-weight: 600;
+		border: 0 none;
+		border-radius: 0;
+		border-bottom: 2px solid currentColor;
+		color: $primary;
+		padding: 0 0 rem(10px);
+		background-color: transparent;
+		span{
+			svg{
+				width: rem(16px);
+				height: rem(16px);
+				object-fit: contain;
+				object-position: center;
+				margin-right: rem(10px);
+			}
+		}
+		&.is--secondary{
+			color: $secondary;
+			border: 0 none;
+			flex-direction: row-reverse;
+			span{
+				svg{
+					margin: 0;
+					margin-left: rem(5px);
+				}
+			}
+		}
+		&.is--danger{
+			color: $danger;
+			align-items: center;
+			span{
+				svg{
+					width: rem(20px);
+					height: rem(20px);
+				}
+			}
+		}
+	}
+
+	&__filter{
+		margin-left: rem(8px);
+		font-size: rem(12px);
+		padding: rem(8px) rem(14px);
+		@media (max-width: 991px) {
+		}
+		&.is--active{
+			background-color: $gray-300;
+			border: rem(1px) solid $gray-300;
+			cursor: not-allowed;
+			&:hover{
+				background-color: $gray-300;
+				color: $dark;
+				border: rem(1px) solid $gray-300;
+			}
+		}
+	}
+
+	&__menu{
+		background-color: transparent;
+		border: 0 none;
+		padding: 0;
+		margin: 0;
+		svg{
+			width: rem(5px);
+			height: rem(18px);
+			object-fit: contain;
+			object-position: center;
+		}
+	}
+
+	&__secondary{
+		background-color: $secondary;
+		color: $light;
+		border: rem(1px) solid $secondary;
+	}
+
+	&__success{
+		background-color: $success;
+		color: $light;
+		border: rem(1px) solid $success;
+		&.Button__xs {
+			min-width: unset;
+		}
+	}
+
+	&__pending{
+		color: $dark;
+		background-color: #FFF9DE;
+		min-width: rem(110px);
+		&.Button__xs {
+			min-width: unset;
+		}
+	}
+
+	&__acceptable{
+		color: #0BB09F;
+		background-color: rgba(21, 183, 134, 0.2);
+		min-width: rem(110px);
+		&.Button__xs {
+			min-width: unset;
+		}
+	}
+
+	&__refused{
+		color: #AB2540;
+		background-color: rgba(255, 55, 95, 0.2);
+		min-width: rem(110px);
+		&.Button__xs {
+			min-width: unset;
+		}
+	}
+
+	&__cancelled{
+		color: $dark;
+		background-color: rgba(234, 175, 58, 0.2);
+		min-width: rem(110px);
+		&.Button__xs {
+			min-width: unset;
+		}
+	}
+
+	&__hover{
+		// &.Button__pending{
+		// 	background-color: rgba(234, 175, 58, 1);
+		// 	color: $light;
+		// }
+		// &.Button__refused{
+		// 	background-color: #AB2540;
+		// 	color: $light;
+		// }
+		// &.Button__acceptable{
+		// 	background-color: #0BB09F;
+		// 	color: $light;
+		// }
+		// &.Button__cancelled{
+		// 	background-color: $secondary;
+		// 	color: $light;
+		// }
+		background-color: rgba(234, 175, 58, 1);
+		color: $light;
+		svg{
+			transition: transform 250ms ease-in-out;
+		}
+
+		&:hover{
+			svg{
+				transform: rotate(30deg);
+			}
+		}
+	}
+
+	&__list{
+		color: $gray-900;
+		width: rem(24px);
+		height: rem(24px);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 0;
+		border: 0 none;
+		background-color: transparent;
+		svg{
+			object-fit: contain;
+			object-position: center;
+			width: rem(3.5px);
+			height: rem(18px);
+		}
+	}
+
+	&__arrow {
+		span {
+			display: inline-block;
+			position: relative;
+		}
+
+		svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			fill: none;
+			object-fit: contain;
+			object-position: center;
+		}
+	}
+	&__loading{
+		position: relative;
+		span{
+			opacity: 0;
+		}
+		&.Button{
+			border-color: #E9E7E7;
+			background-color: #E9E7E7;
+			&:hover{
+				.text{
+					margin: 0;
+				}
+			}
+		}
+		&:after{
+			content: '';
+			width: rem(24px);
+			height: rem(24px);
+			border-radius: rem(30px);
+			border: 2.5px solid #EAAF3A;
+			border-top-color: transparent;
+			position: absolute;
+			top: rem(10px);
+			left: 44%;
+			animation: rotate 400ms ease-out 0ms 1,
+			rotate 400ms linear 400ms infinite;
+		}
+	}
+}
+
+@keyframes rotate {
+	from {transform:rotate(0deg);}
+	to {transform:rotate(-360deg);}
+  }
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.Button__hover:hover svg,
+	.Button__small.Button__arrow:hover svg {
+		transform: none;
+	}
+}

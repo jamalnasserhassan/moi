@@ -1,0 +1,25 @@
+# This file is for unifying the coding style for different editors and IDEs.
+# https://editorconfig.org
+# https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties
+# https://github.com/editorconfig/editorconfig/wiki/Projects-Using-EditorConfig
+# https://make.wordpress.org/core/handbook/coding-standards/
+
+root = true
+
+[*]
+charset = utf-8
+indent_style = tab
+indent_size = 4
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[{*.txt,wp-config-sample.php}]
+end_of_line = crlf
+
+[*.yml]
+indent_style = space
+indent_size = 4

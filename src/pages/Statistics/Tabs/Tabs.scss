@@ -1,0 +1,85 @@
+.Tabs{
+	&__list{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+		flex-wrap: wrap;
+		margin-bottom: 0;
+		li{
+			max-width: 100%;
+			width: 24.3%;
+			min-width: rem(320px);
+			background-color: $light;
+			height: rem(175px);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			flex-direction: column;
+			border-radius: rem(17px);
+			overflow: hidden;
+			border-top: 4px solid;
+			cursor: pointer;
+			transition: all 250ms ease-in-out;
+			margin-bottom: rem(15px);
+			margin-left: rem(10px);
+			&:last-of-type{
+				margin: 0;
+			}
+			&.is--active,
+			&:hover{
+				&.is--orange{
+					background-color: rgb(255, 116, 85, 0.09);
+				}
+				&.is--danger{
+					background-color: rgba(255, 55, 95, 0.1);
+				}
+				&.is--success{
+					background-color: rgba(21, 183, 134, 0.1);
+				}
+				&.is--warning{
+					background-color: #FFFBF5;
+				}
+			}
+			strong{
+				display: inline-block;
+				font-size: rem(38px);
+				font-weight: 600;
+				margin: 0;
+				padding: 0;
+				margin-bottom: rem(4px);
+			}
+			p{
+				margin: 0;
+				padding: 0;
+				font-size: rem(18px);
+				font-weight: 600;
+			}
+			&.is--warning{
+				border-top-color: $yellow;
+			}
+			&.is--success{
+				border-top-color: $green;
+			}
+			&.is--danger{
+				border-top-color: $danger;
+			}
+			&.is--orange{
+				border-top-color: $orange;
+			}
+		}
+	}
+	&__content{
+		margin-bottom: rem(60px);
+		&-item{
+			display: none;
+			&.is--active{
+				display: block;
+			}
+		}
+	}
+}

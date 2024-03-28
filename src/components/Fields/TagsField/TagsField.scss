@@ -1,0 +1,117 @@
+.TagsField{
+
+	&__label{
+		font-size: rem(14px);
+		font-weight: 600;
+		margin: 0;
+		padding: 0;
+		margin-bottom: rem(6px);
+	}
+
+	&__field{
+		position: relative;
+		width: 100%;
+		max-width: 100%;
+		height: rem(50px);
+		margin: 0;
+		padding: 0;
+		border-radius: rem(8px);
+		background-color: $light;
+		border: 1px solid $border-color;
+		font-size: rem(12px);
+		font-weight: 400;
+		color: $dark;
+		box-shadow: none;
+		input{
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			border: 0 none;
+			background-color: transparent;
+			color: $primary;
+			padding: 0 rem(10px) 0 rem(45px);
+			&::placeholder{
+				font-size: rem(12px);
+				font-weight: 300;
+				color: $dark;
+			}
+		}
+		&-button{
+			position: absolute;
+			background-color: transparent;
+			left: rem(7px);
+			top: rem(7px);
+			border: 0 none;
+			padding: 0;
+			margin: 0;
+			width: rem(34px);
+			height: rem(34px);
+			color: $secondary;
+			transition: all 250ms ease-in-out;
+			overflow: hidden;
+			border-radius: rem(4px);
+			border: rem(1px) solid $secondary;
+			&:hover{
+				background-color: $secondary;
+				color: $light;
+			}
+			svg{
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				object-position: center;
+			}
+		}
+	}
+
+	&__list{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		margin-top: rem(18px);
+		margin-bottom: rem(17px);
+		&-item{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: rem(18px);
+			border-radius: rem(8px);
+			margin-left: rem(8px);
+			padding: rem(15px) rem(20px) rem(15px) rem(10px);
+			border: rem(1px) solid #7FA4EC;
+			background-color: #EEF4FF;
+			font-size: rem(14px);
+			color: #3559A2;
+			font-weight: 600;
+			min-width: rem(155px);
+			max-width: 100%;
+			height: rem(45px);
+			&:last-of-type{
+				margin-left: 0;
+			}
+			button{
+				background-color: $light;
+				border: 0 none;
+				border-radius: rem(5px);
+				width: rem(26px);
+				height: rem(26px);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #DE346D;
+				transition: all 250ms ease-in-out;
+				&:hover{
+					color: $light;
+					background-color: #DE346D;
+				}
+				svg{
+					width: rem(16px);
+					height: rem(16px);
+					object-fit: contain;
+					object-position: center;
+				}
+			}
+		}
+	}
+
+}

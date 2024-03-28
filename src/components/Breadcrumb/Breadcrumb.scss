@@ -1,0 +1,66 @@
+.Breadcrumb{
+	position: relative;
+	z-index: 2;
+	@media (max-width: 991px) {
+		width: 100%;
+		// margin-bottom: rem(30px);
+	}
+	ul{
+		display: flex;
+		align-items: center;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		li{
+			display: flex;
+			color: $light;
+			align-items: center;
+			span{
+				font-size: rem(12px);
+				font-weight: 600;
+				display: block;
+				margin-left: rem(11px);
+				position: relative;
+				color: currentColor;
+			}
+			&.Breadcrumb__active{
+				span{
+					font-size: rem(18px);
+				}
+			}
+			&:last-of-type{
+				span{
+					margin-right: rem(11px);
+				}
+			}
+		}
+		li+li::before {
+			content: "";
+			background: $light;
+			display: inline-block;
+			overflow: hidden;
+			height: rem(12px);
+			width: rem(1px);
+			position: relative;
+			top: 0;
+			right: rem(0.6px);
+		}
+	}
+	&__home{
+		background-color: transparent;
+		display: flex;
+		align-items: center;
+		border: 0 none;
+		color: currentColor;
+		padding: 0;
+		span{
+			svg{
+				display: block;
+				width: rem(40px);
+				height: rem(40px);
+				object-fit: contain;
+				object-position: center;
+			}
+		}
+	}
+}

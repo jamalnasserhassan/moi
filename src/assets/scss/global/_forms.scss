@@ -1,0 +1,22 @@
+.Validation{
+	&__text{
+		font: rem(12px);
+		font-weight: 500;
+		color: #AE0623;
+		display: none;
+		margin-top: rem(10px);
+	}
+	&.is--error{
+		input,
+		select,
+		textarea{
+			border-color: $danger;
+			&::placeholder{
+				color: $danger;
+			}
+		}
+		.Validation__text{
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,82 @@
+.Footer{
+	margin-top: rem(30px);
+	padding: 0 rem(20px);
+	&__container{
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: $light;
+		border-top-left-radius: rem(30px);
+		border-top-right-radius: rem(30px);
+		overflow: hidden;
+		padding: rem(24px) rem(20px) rem(16px);
+
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+
+		@media (max-width: 400px) {
+			padding: rem(13px) rem(10px) rem(7px);
+			border-top-left-radius: rem(20px);
+			border-top-right-radius: rem(20px);
+		}
+		img{
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			z-index: 1;
+			pointer-events: none;
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			z-index: 2;
+			background-color: #091F4A;
+			opacity: 80%;
+			pointer-events: none;
+		}
+		&-logo{
+			position: relative;
+			z-index: 10;
+			display: inline-block;
+			text-align: center;
+			svg{
+				display: block;
+				width: rem(38px);
+				height: rem(38px);
+				@media (max-width: 390px) {
+					width: rem(33px);
+					height: rem(33px);
+				}
+			}
+		}
+		&-text{
+			position: relative;
+			z-index: 10;
+			display: inline-block;
+			margin-left: rem(10px);
+			p{
+				margin: 0;
+				padding: 0;
+				font-size: rem(14px);
+				color: currentColor;
+				@media (max-width: 390px) {
+					font-size: rem(12px);
+				}
+			}
+		}
+	}
+}

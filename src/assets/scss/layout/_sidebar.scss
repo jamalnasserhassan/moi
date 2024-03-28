@@ -1,0 +1,115 @@
+.Sidebar{
+	position: fixed;
+	top: rem(10px);
+	bottom: rem(10px);
+	left: rem(10px);
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	pointer-events: none;
+	max-width: 100%;
+	z-index: 9999;
+
+	@media (max-width: 991px) {
+		max-width: 100%;
+		width: 100%;
+		border-radius: 0;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	&__overlay{
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+		z-index: 1;
+		pointer-events: none;
+		opacity: 0;
+		transition: all 300ms ease-in-out;
+		will-change: opacity;
+		transition: all 100ms ease-in-out;
+		&.is--transparent{
+			background-color: transparent !important;
+		}
+	}
+
+	&__content{
+		position: relative;
+		display: block;
+		height: 100%;
+		width: rem(450px);
+		min-width: 30%;
+		max-width: 100%;
+		background-color: $light;
+		border-radius: rem(20px);
+		overflow: hidden;
+		z-index: 9999;
+		transform: translateX(-150%);
+		transition: all 250ms ease-in-out;
+		@media (max-width: 991px) {
+			max-width: 100%;
+			width: 100%;
+			border-radius: 0;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+		&-header{
+			width: 100%;
+			height: rem(80px);
+			padding: rem(20px);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: rem(1px) solid $border-color;
+			h6{
+				color: $dark;
+				font-size: rem(24px);
+				font-weight: 600;
+				margin: 0;
+			}
+			button{
+				background-color: transparent;
+				border: 0 none;
+				padding: 0;
+				margin: 0;
+				border: 0 none;
+				width: rem(20px);
+				height: rem(20px);
+				svg{
+					display: block;
+					width: rem(20px);
+					height: rem(20px);
+					object-fit: contain;
+					object-position: center;
+				}
+			}
+		}
+		&-scroll{
+			width: 100%;
+			height: calc(100% - 100px );
+			overflow: hidden;
+    		overflow-y: auto;
+		}
+	}
+
+	&.is--open{
+		pointer-events: initial;
+		.Sidebar__overlay{
+			pointer-events: initial;
+			opacity: 1;
+		}
+		.Sidebar__content{
+			transform: translateX(0);
+		}
+	}
+}

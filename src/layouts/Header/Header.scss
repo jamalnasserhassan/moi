@@ -1,0 +1,137 @@
+.Header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9998;
+	display: flex;
+	height: rem(100px);
+	padding: 0 rem(20px);
+	@media (max-width: 991px) {
+		height: rem(70px);
+		position: relative;
+		background-color: $light;
+	}
+	&__container{
+		width: 100%;
+		display: flex;
+		&-right{
+			position: relative;
+			flex: 1;
+			background-color: $body-bg;
+			height: rem(100px);
+			width: calc(100% - 300px);
+			display: flex;
+			align-items: center;
+			// justify-content: space-between;
+			border-bottom-left-radius: rem(50px);
+			&:after{
+				content: '';
+				background-color: $body-bg;
+				z-index: 20;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				width: rem(20px);
+				right: rem(-19px);
+			}
+			@media (max-width: 991px) {
+				height: rem(70px);
+				justify-content: flex-start;
+			}
+		}
+		&-left{
+			position: relative;
+			min-width: rem(280px);
+			width: rem(280px);
+			height: rem(80px);
+			margin-right: rem(20px);
+			background-blend-mode: multiply;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background-blend-mode: overlay;
+			top: rem(35px);
+			left: rem(15px);
+			margin-right: rem(35px);
+			padding: 0 rem(20px);
+			// overflow: hidden;
+			border-radius: rem(300px);
+			@media (max-width: 991px) {
+				width: auto;
+				min-width: unset;
+				padding: 0;
+				margin: 0;
+				top: unset;
+				left: unset;
+				border-radius: 0;
+				height: rem(70px);
+			}
+			&::after{
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 0;
+				background-color: $light;
+				border-radius: rem(300px);
+				opacity: 0.2;
+				@media (max-width: 991px) {
+					border-radius: 0;
+					content: none;
+				}
+			}
+			&.radius--xs{
+				border-radius: rem(23px);
+				&::after{
+					border-radius: rem(23px);
+				}
+			}
+		}
+	}
+	.Shape{
+		position: absolute;
+		top: rem(14px);
+		left: rem(-55px);
+		height: rem(65px);
+		width: rem(65px);
+		color: $body-bg;
+		@media (max-width: 991px) {
+			display: none;
+		}
+		&:last-of-type{
+			right: rem(-2px);
+			left: unset;
+			top: rem(97px);
+			width: rem(50px);
+			height: rem(50px);
+		}
+	}
+}
+
+.Menu{
+	&__toggle{
+		display: none;
+		background-color: transparent;
+		border: 0 none;
+		padding: 0;
+		height: rem(24px);
+		width: rem(24px);
+		cursor: pointer;
+		color: $primary;
+		svg{
+			height: rem(24px);
+			width: auto;
+			object-fit: contain;
+			object-position: center;
+			cursor: pointer;
+		}
+		@media (max-width: 991px) {
+			display: flex;
+		}
+	}
+}

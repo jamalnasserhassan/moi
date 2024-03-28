@@ -1,0 +1,40 @@
+.UserInfo{
+	&__label{
+		font-size: rem(14px);
+		font-weight: 600;
+		margin: 0;
+		padding: 0;
+		margin-bottom: rem(6px);
+		display: block;
+		width: 100%;
+	}
+	&__button{
+		margin: 0;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: rem(15px) rem(20px);
+		background-color: #FFFBF4;
+		border-radius: rem(8px);
+		border: rem(1px) solid #F8E9CB;
+		font-size: rem(12px);
+		font-weight: 600;
+		color: $dark;
+		img,
+		svg{
+			width: rem(30px);
+			height: rem(30px);
+			object-fit: contain;
+			object-position: center;
+			border-radius: rem(200px);
+			margin-left: rem(10px);
+		}
+	}
+	&.is--primary{
+		.UserInfo__button{
+			background-color: #EEF4FF;
+			border: rem(1px) solid #7FA4EC;
+		}
+	}
+}
+

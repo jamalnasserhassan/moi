@@ -1,0 +1,71 @@
+* {
+	scroll-behavior: smooth;
+}
+
+*,
+::after,
+::before {
+	box-sizing: border-box;
+	outline: 0 none;
+	&:focus {
+		outline: 0 none;
+	}
+}
+
+html,
+body {
+	font-family: "Bahij TheSansArabic";
+	font-weight: normal;
+	background-color: $body-bg;
+	color: $body-color;
+	text-align: right;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.App {
+	position: relative;
+	overflow: auto;
+	overflow-x: hidden;
+	&.u-overflow {
+		overflow: hidden;
+	}
+	&.page--orders {
+		background-color: #f2f2f6;
+		.Header__container-right,
+		.Header__container-right:after {
+			background-color: #f2f2f6;
+		}
+		.Header .Shape {
+			color: #f2f2f6;
+		}
+	}
+}
+
+svg {
+	display: block;
+	width: rem(24px);
+	height: rem(24px);
+	object-fit: contain;
+	object-position: center;
+	fill: none;
+}
+
+a {
+	text-decoration: none;
+	&:focus,
+	&:visited,
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.Main {
+	overflow: hidden;
+	min-height: calc(100vh - 108px);
+}

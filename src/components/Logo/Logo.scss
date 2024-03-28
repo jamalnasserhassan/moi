@@ -1,0 +1,28 @@
+.Logo{
+	padding-right: rem(10px);
+	@media (max-width: 991px) {
+		padding-right: 0;
+		margin-right: rem(16px);
+	}
+	a{
+		display: block;
+		height: auto;
+		width: auto;
+		max-width: 100%;
+		overflow: hidden;
+		img,
+		svg{
+			display: block;
+			width: rem(172px);
+			height: rem(60px);
+			object-fit: contain;
+			object-position: right center;
+			@media (max-width: 1200px) {
+				width: rem(150px);
+			}
+			@media (max-width: 470px) {
+				height: rem(50px);
+			}
+		}
+	}
+}

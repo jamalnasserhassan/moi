@@ -1,0 +1,133 @@
+.Notification{
+	position: relative;
+	color: $light;
+	display: flex;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	height: auto;
+	background-color: transparent;
+	border: 0 none;
+	transition: all 250ms ease-in-out;
+	z-index: 20;
+	overflow: visible;
+	@media (max-width: 991px) {
+		color: $primary;
+	}
+	&:hover{
+		color: $secondary;
+	}
+	svg{
+		display: block;
+		height: rem(26px);
+		width: rem(26px);
+		object-fit: contain;
+		object-position: center;
+		fill: none;
+	}
+	&__badge{
+		position: absolute;
+		background-color: #F7285B;
+		width: rem(18px);
+		height: rem(18px);
+		border-radius: rem(18px);
+		left: rem(-6px);
+		top: rem(-6px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		font-size: rem(10px);
+		font-weight: bold;
+		box-shadow: 0 4px 8.4px rgba(247, 40, 92, 0.4);
+		@media (max-width: 991px) {
+			color: $light;
+		}
+	}
+}
+
+.Sidebar{
+	&__content{
+		&-list{
+			ul{
+				padding: 0;
+				margin: 0;
+				list-style-type: none;
+				width: 100%;
+				height: 85vh;
+				overflow: auto;
+				li{
+					background-color: $light;
+					padding: 0 rem(30px);
+					&.is--unread{
+						background-color: #F7F7FF;
+					}
+				}
+			}
+		}
+	}
+}
+
+.Card{
+
+	&__notification{
+		width: 100%;
+		height: 100%;
+		border-bottom: rem(1px) solid $border-color;
+		padding: rem(15px) 0;
+		min-height: rem(76px);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&-right{
+			display: flex;
+			align-items: center;
+		}
+		figure{
+			margin: 0;
+			margin-left: rem(10px);
+			svg,
+			img{
+				display: block;
+				width: rem(44px);
+				height: rem(44px);
+				min-width: rem(44px);
+				min-height: rem(44px);
+				object-fit: contain;
+				object-position: center;
+			}
+		}
+		.Card__main{
+			p{
+				font-size: rem(14px);
+				font-weight: bold;
+				color: $primary;
+				margin: 0;
+				padding: 0;
+				margin-bottom: 0;
+				&.description{
+					margin: 0;
+					font-size: rem(12px);
+					font-weight: 300;
+					max-width: rem(300px);
+					a{
+						text-decoration: underline;
+						font-weight: bold;
+						color: $primary;
+					}
+				}
+			}
+		}
+		footer{
+			margin-right: rem(15px);
+			min-width: rem(65px);
+			p{
+				padding: 0;
+				margin: 0;
+				font-size: rem(12px);
+				color: $gray-900;
+				font-weight: 300;
+			}
+		}
+	}
+}

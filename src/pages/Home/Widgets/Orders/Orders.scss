@@ -1,0 +1,447 @@
+.Orders{
+	position: relative;
+	width: 100%;
+	background-color: $light;
+	border-radius: rem(15px);
+	height: 100%;
+	border-radius: rem(25px);
+	padding: rem(20px) rem(30px) rem(10px);
+	@media (max-width: 991px) {
+		margin-bottom: rem(20px);
+		height: auto;
+	}
+	@media (max-width: 500px) {
+		padding: rem(20px) rem(10px) rem(10px);
+	}
+	&__container{
+		&-header{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: rem(25px);
+			.Title{
+				display: flex;
+				align-items: center;
+				@media (max-width: 400px) {
+					align-items: flex-start;
+					flex-direction: column;
+				}
+				.Select{
+					margin-right: rem(10px);
+				}
+				h2{
+					font-size: rem(24px);
+					font-weight: 600;
+					margin: 0;
+					padding: 0;
+					@media (max-width: 400px) {
+						margin-bottom: rem(10px);
+					}
+				}
+			}
+		}
+		&-content{
+			width: 100%;
+		}
+	}
+}
+
+
+
+.Card {
+
+	&__order {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: $light;
+		border-radius: rem(13px);
+		margin-top: rem(20px);
+		padding: rem(16px) rem(20px);
+		box-shadow: 0 rem(7px) rem(10px) rgba(0, 0, 0, 0.03);
+
+		&:hover {
+			.Button__hide {
+				opacity: 1;
+			}
+
+			footer{
+				padding-left: rem(120px);
+				&.is--page{
+					padding: 0;
+					.Button__container{
+						padding-left: rem(120px);
+					}
+				}
+			}
+
+			.Button__hover {
+				opacity: 1;
+				transition: opacity 250ms 150ms ease-in-out;
+			}
+		}
+
+		@media (max-width: 768px) {
+			flex-wrap: wrap;
+			flex-direction: column-reverse;
+			align-items: flex-start;
+		}
+
+		&.is--pending {
+			border-right: rem(2px) solid #F6DE6C;
+		}
+
+		&.is--acceptable {
+			border-right: rem(2px) solid rgba(21, 183, 134, 0.2);
+		}
+
+		&.is--refused {
+			border-right: rem(2px) solid rgba(255, 55, 95, 0.2);
+		}
+
+		&.is--cancelled {
+			border-right: rem(2px) solid $orange;
+		}
+
+		&.is--border {
+			border: rem(1px) solid $gray-300;
+			box-shadow: none;
+			border-radius: rem(15px);
+			margin-top: 0;
+			margin-bottom: rem(10px);
+
+			.Card__list {
+				li {
+					font-size: rem(12px);
+					font-weight: 400;
+					color: $primary;
+
+					+li::before {
+						right: rem(-6px);
+						top: rem(-1px);
+					}
+
+					button{
+						font-size: rem(12px);
+						font-weight: 400;
+						color: $primary;
+					}
+				}
+			}
+		}
+
+		figure {
+			margin: 0;
+
+			&.is--mobile {
+				display: none;
+				width: 100%;
+				align-items: center;
+				justify-content: space-between;
+				padding-right: rem(12px);
+
+				@media (max-width: 768px) {
+					display: flex;
+					margin-top: rem(20px);
+				}
+			}
+
+			@media (max-width: 768px) {
+				display: none;
+			}
+		}
+
+		.Card__title {
+			display: flex;
+			align-items: center;
+			margin-bottom: rem(15px);
+
+			p {
+				font-size: rem(16px);
+				font-weight: 600;
+				padding: 0;
+				margin: 0;
+				margin-right: rem(10px);
+			}
+
+			img,
+			svg {
+				width: rem(27px);
+				height: rem(27px);
+				object-fit: contain;
+				object-position: center;
+				fill: none;
+			}
+		}
+
+		.Card__list {
+			display: flex;
+			align-items: center;
+			padding: 0;
+			margin: 0;
+			list-style-type: none;
+
+			@media (max-width: 470px) {
+				flex-wrap: wrap;
+				max-width: rem(320px);
+			}
+
+			li {
+				font-size: rem(14px);
+				font-weight: 300;
+				color: $gray-900;
+				margin-left: rem(11px);
+				display: flex;
+				align-items: center;
+
+				button{
+					background-color: transparent;
+					padding: 0;
+					border: 0 none;
+					font-size: rem(14px);
+					font-weight: 300;
+					color: $gray-900;
+				}
+
+				@media (max-width: 470px) {
+					margin-bottom: rem(5px);
+
+					&:last-of-type {
+						&::before {
+							content: none;
+						}
+					}
+				}
+
+				img {
+					width: rem(22px);
+					height: rem(22px);
+					object-fit: contain;
+					object-position: center;
+					border-radius: rem(200px);
+					margin-left: rem(5px);
+				}
+
+				+li::before {
+					content: "";
+					background: currentColor;
+					display: inline-block;
+					overflow: hidden;
+					height: rem(3px);
+					width: rem(3px);
+					position: relative;
+					border-radius: rem(20px);
+					right: rem(-4px);
+					top: rem(-3px);
+
+					@media (max-width: 470px) {
+						right: rem(-6px);
+						top: 0;
+					}
+				}
+			}
+		}
+
+		.Card__gallery {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: row-reverse;
+			padding: 0;
+			margin: 0;
+			list-style-type: none;
+			position: relative;
+			&:hover{
+				.Tooltip{
+					transform: translateY(0);
+					opacity: 1;
+					z-index: 20;
+				}
+			}
+			.Tooltip{
+				position: absolute;
+				display: inline-flex;
+				background-color: #18202F;
+				font-size: rem(12px);
+				font-weight: 300;
+				border-radius: rem(5px);
+				height: rem(30px);
+				color: $light;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				padding: 0 rem(16px);
+				width: auto;
+				z-index: -20;
+				min-width: rem(117px);
+				top: rem(-35px);
+				transform: translateY(35px);
+				transition: all 250ms ease-in-out;
+				opacity: 0;
+				&__arrow{
+					position: relative;
+					&::after{
+						content: '';
+						width: 0;
+						height: 0;
+						position: absolute;
+						right: rem(10px);
+						bottom: rem(-22px);
+						border-left: 12px solid transparent;
+						border-top: 12px solid #18202F;
+						border-right: 12px solid transparent;
+						z-index: 0;
+					}
+				}
+			}
+			li {
+				position: relative;
+				border: 3px solid $light;
+				display: flex;
+				width: rem(42px);
+				height: rem(42px);
+				margin-right: rem(-12px);
+				z-index: 5;
+				border-radius: rem(42px);
+				overflow: hidden;
+				z-index: 10;
+
+				&.is--pending {
+					background-color: $yellow;
+				}
+
+				&.is--acceptable {
+					background-color: $green;
+				}
+
+				&.is--refused {
+					background-color: $danger;
+				}
+
+				&.is--cancelled {
+					background-color: $orange;
+				}
+
+				.checked{
+					// position: absolute;
+					width: 100%;
+					height: 100%;
+					align-items: center;
+					justify-content: center;
+					color: $light;
+					z-index: 3;
+					display: none;
+					svg{
+						width: rem(17px);
+						height: rem(12px);
+						object-fit: contain;
+						object-position: center;
+					}
+				}
+
+				&.is--checked {
+					.checked{
+						display: flex;
+					}
+				}
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: center;
+					opacity: 0.5;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+
+		footer {
+			display: flex;
+			align-items: center;
+			transition: padding 250ms ease-in-out;
+
+			&.is--page{
+				padding: 0;
+				.Button__container{
+					transition: padding 250ms ease-in-out;
+				}
+			}
+
+			@media (max-width: 768px) {
+				width: 100%;
+				justify-content: space-between;
+				margin-bottom: rem(25px);
+			}
+
+			.Button__hide {
+				margin-left: rem(10px);
+				opacity: 0;
+				transition: all 250ms ease-in-out;
+				@media (max-width: 991px) {
+					display: none;
+				}
+			}
+
+			.Button {
+				overflow: hidden;
+				z-index: 2;
+				&__hover {
+					position: relative;
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					border-radius: rem(200px);
+					cursor: pointer;
+					padding: rem(10px) rem(18px);
+					font-size: rem(14px);
+					font-weight: 600;
+					border: 0 none;
+					position: absolute;
+					left: rem(20px);
+					top: rem(28px);
+					z-index: 1;
+					display: flex;
+					transition: opacity 250ms 0ms ease-in-out;
+					opacity: 0;
+					@media (max-width: 991px) {
+						display: none;
+					}
+					span {
+						margin-right: rem(10px);
+						height: rem(16px);
+						width: rem(16px);
+						display: inline-block;
+						position: relative;
+					}
+
+					svg {
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						fill: none;
+						object-fit: contain;
+						object-position: center;
+						height: rem(16px);
+						width: rem(16px);
+						transition: transform 250ms ease-in-out;
+					}
+				}
+			}
+
+			.Button__container{
+				display: flex;
+				align-items: center;
+				.Button__hover{
+					left: rem(45px);
+				}
+			}
+		}
+	}
+}

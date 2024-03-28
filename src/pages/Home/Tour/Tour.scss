@@ -1,0 +1,105 @@
+#walktour-portal{
+    svg{
+        // border-radius: rem(40px);
+    }
+    #walktour-tooltip-container{
+        .Walktour{
+            width: rem(386px);
+            max-width: 96%;
+            background-color: $light;
+            border-radius: rem(18px);
+            box-shadow: 0 7px 16px rgba(0, 0, 0, 0.1);
+            padding: rem(25px);
+            &__title{
+                color: #8E9AA0;
+                font-size: rem(12px);
+                font-weight: 300;
+                padding: 0;
+                margin: 0;
+                direction: ltr;
+                font-family: 'Bahij TheSansArabic', sans-serif;
+                margin-bottom: rem(2px);
+            }
+            &__desc{
+                width: rem(307px);
+                color: black;
+                font-size: rem(18px);
+                font-weight: 500;
+                font-family: 'Bahij TheSansArabic', sans-serif;
+            }
+            &__actions{
+                display: flex;
+                justify-content: flex-strat;
+                button{
+                    font-weight: 300;
+                    margin-left: rem(5px);
+                }
+            }    
+            &:after{
+                content: '';
+                position: absolute;
+                top: rem(-62px);
+                left: rem(25px);
+                background-color: $secondary;
+                width: rem(1px);
+                height: rem(64px);
+                z-index: 0;
+            }
+            &:before{
+                content: '';
+                position: absolute;
+                top: rem(-62px);
+                left: rem(21px);
+                background-color: $secondary;
+                width: rem(9px);
+                height: rem(9px);
+                border-radius: rem(20px);
+            }
+            &.is--right{
+                &:after{
+                    @media (min-width: 991px) {
+                        top: rem(90px);
+                        right: rem(-62px);
+                        height: rem(1px);
+                        width: rem(63px);
+                    }
+                }
+                &:before{
+                    @media (min-width: 991px) {
+                        top: rem(86px);
+                        right: rem(-62px);
+                    }
+                }
+            }
+            &.is--left{
+                &:after{
+                    @media (min-width: 991px) {
+                        top: rem(90px);
+                        left: rem(-62px);
+                        height: rem(1px);
+                        width: rem(63px);
+                    }
+                    @media (max-width: 991px) {
+                        top: unset;
+                        bottom: rem(-62px);
+                    }
+                }
+                &:before{
+                    @media (min-width: 991px) {
+                        top: rem(86px);
+                        left: rem(-62px);
+                    }
+                    @media (max-width: 991px) {
+                        top: unset;
+                        bottom: rem(-62px);
+                    }
+                }
+            }
+        }
+        button{
+            &[disabled]{
+                display: none;
+            }
+        }
+    }
+}

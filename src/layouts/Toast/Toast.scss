@@ -1,0 +1,63 @@
+.Notify{
+	display: flex;
+	align-items: flex-start;
+	min-width: rem(366px);
+	padding: rem(20px);
+	@media (max-width: 991px) {
+		min-width: 100%;
+		padding: rem(10px);
+	}
+	&__left{
+		button{
+			background-color: transparent;
+			border: 0 none;
+			padding: 0;
+			svg{
+				width: rem(12px);
+				height: rem(12px);
+				color: #BFC0C3;
+				&:hover{
+					color: $danger;
+				}
+			}
+		}
+	}
+	&__right{
+		display: inline-flex;
+		flex: 1;
+		align-items: center;
+		font-size: rem(16px);
+		color: #1D252D;
+		@media (max-width: 991px) {
+			font-size: rem(12px);
+		}
+		svg{
+			min-width: rem(54px);
+			min-height: rem(54px);
+			object-fit: contain;
+			object-position: center;
+			@media (max-width: 991px) {
+				min-width: rem(30px);
+				min-height: rem(30px);
+				width: rem(30px);
+				height: rem(30px);
+			}
+		}
+		a{
+			text-decoration: underline;
+			color: #1D252D;
+			&:hover{
+				color: $primary;
+				text-decoration: underline;
+			}
+		}
+		.message{
+			width: rem(300px);
+			line-height: rem(30px);
+			@media (max-width: 991px) {
+				width: rem(230px);
+				line-height: initial;
+			}
+		}
+	}
+}

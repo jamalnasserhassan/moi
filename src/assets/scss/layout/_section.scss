@@ -1,0 +1,260 @@
+.Section{
+	position: relative;
+	z-index: 10;
+
+	&--chart{
+		.Chart{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			&__legend{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+				padding: 0;
+				margin: 0;
+				margin-top: rem(20px);
+				padding-top: rem(20px);
+				border-top: rem(1px) solid $gray-100;
+				&-item{
+					font-size: rem(14px);
+					font-weight: 300;
+					cursor: pointer;
+					display: flex;
+					align-items: center;
+					.legend-icon{
+						width: rem(14px);
+						height: rem(14px);
+						border-radius: rem(20px);
+						margin-left: rem(5px);
+					}
+					.legend-label{
+						display: inline-block;
+						padding: 0;
+						margin: 0;
+						color: #8E9AA0;
+					}
+				}
+			}
+		}
+	}
+
+	&--card{
+		border-radius: rem(30px);
+		padding: rem(30px);
+		@media (max-width: 991px) {
+			border-radius: 0;
+		}
+	}
+
+	&--width{
+		margin: 0 auto;
+		max-width: 100%;
+		padding: 0 rem(40px);
+		@media (max-width: 991px) {
+			padding: 0 rem(10px);
+			width: 100%;
+			margin: 0;
+		}
+	}
+
+	&--shadow{
+		box-shadow: 0px 3px 20px rgba(187, 187, 187, 0.16);
+	}
+
+	&--top{
+		top: rem(-60px);
+		margin-bottom: rem(-60px);
+		@media (max-width: 991px) {
+			top: unset;
+			margin-bottom: 0;
+		}
+	}
+
+	&--margin{
+		margin-top: rem(40px);
+		@media (max-width: 991px) {
+			margin-top: rem(20px);
+		}
+	}
+
+	&--white{
+		background-color: $light;
+	}
+
+	&--gray{
+		background-color: $gray-600;
+	}
+
+	&--index{
+		position: relative;
+		z-index: 20;
+	}
+
+	&__header{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		z-index: 20;
+		&.header--bottom{
+			margin-bottom: rem(25px);
+		}
+		&.header--border{
+			border-bottom: rem(1px) solid $gray-100;
+			padding-bottom: rem(15px);
+			margin-bottom: rem(15px);
+		}
+		&-title{
+			display: inline-flex;
+			align-items: center;
+			margin: 0;
+			padding: 0;
+			@media (max-width: 400px) {
+				align-items: flex-start;
+				flex-direction: column;
+			}
+			select {
+				background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%2367717A' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+				background-repeat: no-repeat;
+				background-position: left rem(15px) center;
+				background-size: rem(10px);
+				appearance: none;
+				outline: 0 none;
+				padding-right: rem(15px);
+				padding-left: rem(35px);
+				border-radius: rem(100px);
+				font-size: rem(12px);
+				font-weight: 400;
+				border: rem(1px) solid $border-color;
+				color: $dark;
+				height: rem(35px);
+				margin-right: rem(10px);
+				box-shadow: 0 rem(7px) rem(10px) rgba(0, 0, 0, 0.03);
+				cursor: pointer;
+				@media (max-width: 400px) {
+					margin-right: 0;
+				}
+				&::-ms-expand {
+					display: none;
+				}
+				option{
+					color: $dark;
+					&::checked{
+						color: $light;
+						background-color: $primary;
+					}
+				}
+			}
+			h1{
+				font-size: rem(24px);
+				font-weight: 600;
+				margin: 0;
+				padding: 0;
+				margin-left: rem(5px);
+				@media (max-width: 400px) {
+					margin-bottom: rem(10px);
+				}
+			}
+			h2{
+				font-size: rem(20px);
+				font-weight: 700;
+				margin: 0;
+				padding: 0;
+				margin-left: rem(5px);
+				@media (max-width: 400px) {
+					margin-bottom: rem(10px);
+				}
+			}
+			.Badge{
+				margin-right: rem(10px);
+			}
+
+		}
+		&-actions{
+			display: flex;
+			align-items: center;
+			@media (max-width: 991px) {
+				display: none;
+				position: absolute;
+				width: 100%;
+				top: 100%;
+				background: $light;
+				margin-top: rem(20px);
+				padding: rem(15px);
+				border-radius: rem(12px);
+				box-shadow: 0 rem(7px) rem(10px) rgba(0, 0, 0, 0.03);
+				&.is--open{
+					display: flex;
+					flex-direction: column;
+				}
+			}
+		}
+	}
+	&__actions{
+		&-item{
+			margin-left: rem(10px);
+			.Button__menu{
+				width: auto;
+				border-radius: rem(12px);
+				font-size: rem(12px);
+				font-weight: 300;
+				height: rem(35px);
+				padding: 0;
+			}
+			@media (max-width: 991px) {
+				width: 100%;
+				margin: 0;
+				margin-bottom: rem(10px);
+				&:last-of-type{
+					margin-bottom: 0;
+				}
+
+			}
+		}
+	}
+	&__button{
+		background-color: $light;
+		color: $primary;
+		width: rem(36px);
+		height: rem(36px);
+		border-radius: rem(5px);
+		border: rem(1px) solid $primary;
+		background-color: $light;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		display: none;
+		@media (max-width: 991px) {
+			display: flex;
+		}
+		svg{
+			display: block;
+			width: rem(16px);
+			height: rem(10px);
+			object-fit: contain;
+			object-position: center;
+		}
+	}
+}
+
+
+.Badge{
+	display: block;
+	overflow: hidden;
+	min-width: rem(30px);
+	min-height: rem(30px);
+	width: rem(30px);
+	height: rem(30px);
+	border-radius: rem(8px);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: $primary;
+	font-size: rem(14px);
+	color: $light;
+	box-shadow: 0 rem(4px) rem(4px) rgba(79, 79, 200, 0.18);
+}

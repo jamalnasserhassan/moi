@@ -1,0 +1,25 @@
+// @media (min-width: 1200px){
+// 	.container, .container-lg, .container-md, .container-sm, .container-xl {
+// 		max-width: 1556px;
+// 	}
+// }
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    padding-right: rem(7.5px);
+    padding-left: rem(7.5px);
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-right: calc(-0.5* 15px);
+    margin-left: calc(-0.5* 15px);
+}
+
+.row>*{
+	padding-right: rem(7.5px);
+    padding-left: rem(7.5px);
+    margin-top: 0;
+}

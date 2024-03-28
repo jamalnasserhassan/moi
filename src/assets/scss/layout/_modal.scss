@@ -1,0 +1,238 @@
+.Modal{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	pointer-events: none;
+	max-width: 100%;
+	z-index: 99999;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@media (max-width: 991px) {
+		max-width: 100%;
+		width: 100%;
+		border-radius: 0;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	&__overlay{
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+		z-index: 1;
+		pointer-events: none;
+		opacity: 0;
+		transition: all 300ms ease-in-out;
+		will-change: opacity;
+	}
+
+	&__content{
+		position: relative;
+		display: block;
+		width: rem(578px);
+		height: auto;
+		min-width: 30%;
+		max-width: 95%;
+		background-color: $light;
+		border-radius: rem(25px);
+		overflow: hidden;
+		z-index: 9999;
+		pointer-events: none;
+		opacity: 0;
+		will-change: transform;
+		transition: all 300ms ease-out;
+		padding: rem(50px) rem(20px);
+		&.with--close{
+			padding: 0 0 rem(35px);
+			.Modal__content-list li{
+				width: 100%;
+				border-radius: rem(8px);
+			}
+		}
+		@media (max-width: 991px) {
+			max-width: 95%;
+			width: 100%;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+		&-close{
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			height: rem(52px);
+			background-color: #F7F7FB;
+			padding: 0 rem(20px);
+			margin-bottom:rem(30px);
+			.Button__burger{
+				color: #A0A0A5;
+				width: rem(18px);
+				height: rem(18px);
+				svg{
+					width: rem(18px);
+					height: rem(18px);
+				}
+			}
+		}
+		&-container{
+			max-width: rem(430px);
+			margin: 0 auto;
+		}
+		&-header{
+			max-width: 100%;
+			margin: 0 auto;
+			margin-bottom: rem(20px);
+			text-align: center;
+			.icon{
+				width: rem(75px);
+				height: rem(75px);
+				margin: 0 auto;
+				margin-bottom: rem(20px);
+				svg{
+					display: block;
+					width: rem(75px);
+					height: rem(75px);
+					text-align: center;
+					object-fit: contain;
+					object-position: center;
+				}
+				&.is--small{
+					width: rem(60px);
+					height: rem(60px);
+					svg{
+						width: rem(60px);
+						height: rem(60px);
+					}
+				}
+			}
+			strong.title{
+				display: block;
+				text-align: center;
+				font-size: rem(16px);
+				font-weight: bold;
+				color: $dark;
+				margin: 0 auto rem(10px);
+			}
+			.desc{
+				font-size: rem(14px);
+				font-weight: 300;
+				color: #8E9AA0;
+				padding: 0;
+				margin: 0;
+			}
+		}
+		&-list{
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			list-style-type: none;
+			li{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				background-color: #FBFBFB;
+				border-radius: rem(8px);
+				padding: rem(15px);
+				width: rem(366px);
+				max-width: 100%;
+				margin: 0 auto rem(10px);
+				&:last-of-type{
+					margin: 0 auto;
+				}
+				span{
+					font-size: rem(12px);
+					font-weight: 600;
+					&.number{
+						text-decoration: underline;
+					}
+					&.label{
+						font-size: rem(12px);
+						font-weight: 300;
+						border-radius: rem(40px);
+						height: rem(27px);
+						display: inline-flex;
+						align-items: center;
+						justify-content: center;
+						text-align: center;
+						&.is--pending{
+							background-color: #FFFCEC;
+							padding: 0 rem(10px);
+						}
+						&.is--approve{
+							background-color: rgba(21, 183, 134, 0.1);
+							color: #15B786;
+							padding: 0 rem(10px);
+						}
+					}
+					&.avatar{
+						display: flex;
+						align-items: center;
+						img{
+							width: rem(25px);
+							height: rem(25px);
+							object-fit: contain;
+							object-position: center;
+							border-radius: rem(200px);
+							margin-left: rem(10px);
+						}
+						p{
+							margin: 0;
+							padding: 0;
+							font-size: rem(12px);
+							font-weight: 600;
+						}
+					}
+				}
+			}
+		}
+		&-footer{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: rem(15px);
+			.Button{
+				margin-left: rem(15px);
+				&:last-child{
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	&.is--open{
+		pointer-events: initial;
+		.Modal__overlay{
+			pointer-events: initial;
+			opacity: 1;
+			transition: all 300ms ease-out;
+		}
+		.Modal__content{
+			pointer-events: initial;
+			opacity: 1;
+			transition: all 300ms ease-out;
+		}
+	}
+}
+
+
+@keyframes mmfadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}

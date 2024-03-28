@@ -1,0 +1,64 @@
+.Sidebar.Sidebar{
+	&__menu{
+		right: 0;
+		left: unset;
+		.Sidebar__content{
+			max-width: rem(310px);
+			width: auto;
+			transform: translateX(150%);
+			&-header{
+				height: rem(70px);
+				padding: rem(20px);
+				justify-content: flex-end;
+				button{
+					background-color: #FAFAFC;
+					border-radius: rem(34px);
+					width: rem(34px);
+					height: rem(34px);
+					color: $dark;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					text-align: center;
+					transition: all 250ms ease-in-out;
+					svg{
+						display: block;
+						width: rem(13px);
+						height: rem(13px);
+						object-fit: contain;
+						object-position: center;
+					}
+					&:hover{
+						background-color: $dark;
+						color: $light;
+					}
+				}
+			}
+			&-scroll{
+				.Menu{
+					display: block;
+					width: 100%;
+					padding: rem(30px);
+					ul{
+						display: block;
+						flex-direction: column;
+						width: 100%;
+						li{
+							display: block;
+							margin-bottom: rem(20px);
+							border-bottom: 0.0625rem solid #EDEDED;
+							a{
+								padding-bottom: rem(20px);
+								border: 0 none;
+								border-radius: 0;
+								&.is--active{
+									border: 0 none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

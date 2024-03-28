@@ -1,0 +1,243 @@
+html .Intro{
+	position: relative;
+	z-index: 1;
+	margin-top: rem(20px);
+	overflow: hidden;
+	padding: 0 rem(20px);
+	@media (max-width: 991px) {
+		margin: 0;
+		padding: 0;
+	}
+	.container{
+		@media (max-width: 991px) {
+			padding: 0;
+		}
+	}
+	&__container{
+		width: 100%;
+		position: relative;
+		width: 100%;
+		height: rem(780px);
+		min-height: 85vh;
+		border-radius: rem(50px);
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		@media (max-width: 991px) {
+			align-items: flex-start;
+    		padding-top: rem(120px);
+			height: auto;
+			border-radius: 0;
+			min-height: unset;
+		}
+		&-slider{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			.swiper-slide{
+				position: relative;
+				overflow: hidden;
+
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				// background-attachment: fixed;
+
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: center;
+					z-index: 1;
+					pointer-events: none;
+				}
+				&:after{
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					bottom: 0;
+					right: 0;
+					z-index: 2;
+					background-color: #091F4A;
+					opacity: 80%;
+					pointer-events: none;
+				}
+			}
+		}
+		&-aside{
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			z-index: 10;
+			width: rem(100px);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			gap: rem(80px);
+			z-index: 10;
+			@media (max-width: 991px) {
+				display: none;
+			}
+			.swiper-pagination{
+				position: static;
+				display: inline-flex;
+				width: auto;
+				flex-direction: column;
+				padding: 0;
+				margin: 0;
+				gap: rem(5px);
+				.swiper-pagination-bullet{
+					position: relative;
+					color: $light;
+					width: rem(20px);
+					height: rem(20px);
+					background-color: transparent;
+					border: 1px solid transparent;
+					opacity: 1;
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					text-align: center;
+					transition: all 250ms ease-in-out;
+					&:hover{
+						color: $secondary;
+					}
+					&::after{
+						content: '';
+						position: relative;
+						display: block;
+						width: rem(5px);
+						height: rem(5px);
+						background-color: currentColor;
+						border-radius: rem(10px);
+						opacity: 0.3;
+					}
+					&.swiper-pagination-bullet-active{
+						border-color: currentColor;
+						&::after{
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+		&-flex{
+			position: relative;
+			z-index: 20;
+			padding-bottom: rem(30px);
+			@media (max-width: 991px) {
+				padding-bottom: rem(250px);
+			}
+		}
+	}
+	&__content{
+		position: relative;
+		color: $light;
+		text-align: center;
+		margin-bottom: rem(40px);
+		z-index: 2;
+		@media (max-width: 991px) {
+			margin-bottom: rem(30px);
+		}
+		.Subtitle{
+			color: currentColor;
+			font-weight: 300;
+			margin: 0;
+			margin-bottom: rem(5px);
+			padding: 0;
+			font-size: rem(27px);
+		}
+		h1{
+			color: currentColor;
+			margin-bottom: rem(20px);
+			font-size: rem(48px);
+
+		}
+		p{
+			color: currentColor;
+			font-weight: 300;
+			margin: 0;
+			padding: 0;
+			font-size: rem(15px);
+			@media (max-width: 991px) {
+				max-width: 90%;
+				margin: 0 auto;
+				text-align: center;
+			}
+
+		}
+		strong{
+			color: currentColor;
+			font-weight: bold;
+			margin: 0;
+			padding: 0;
+			font-size: rem(15px);
+		}
+	}
+}
+
+.Scroll {
+	background: transparent;
+	border: 0 none;
+	color: $light;
+	writing-mode: vertical-rl;
+	text-transform: uppercase;
+	font-family: helvetica;
+	font-size: rem(12px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row-reverse;
+	gap: rem(10px);
+	transition: all 250ms ease-in-out;
+	@media (max-width: 991px) {
+		display: none;
+	}
+	&:hover{
+		color: $secondary;
+	}
+	.shape {
+		display: block;
+		height: rem(40px);
+		width: rem(1px);
+		color: currentColor;
+		background-color: transparent;
+		position: relative;
+		overflow: hidden;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: rem(50px);
+			background-color: currentColor;
+			animation: scroll 2s infinite;
+			transition: all 250ms ease-in-out;
+		}
+	}
+}
+
+@keyframes scroll {
+	0% { transform: translateY(-100%);}
+    90% { transform: translateY(100%);}
+    100% { transform: translateY(200%);}
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .Scroll {
+        display: none;
+    }
+}

@@ -1,0 +1,289 @@
+.LoginForm {
+	background-color: #f7f7f6;
+	overflow: auto;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&__container {
+		background-color: $light;
+		border-radius: rem(25px);
+		display: inline-block;
+		border: rem(1px) solid $border-color;
+		padding: rem(37px) rem(60px);
+		max-width: 90%;
+		@media (max-width: 991px) {
+			padding: rem(20px) rem(30px);
+		}
+		&-title {
+			text-align: center;
+			color: $primary;
+			font-size: rem(35px);
+			font-weight: bold;
+			margin: 0;
+			padding: 0;
+			margin-bottom: rem(15px);
+			@media (max-width: 768px) {
+				margin-bottom: rem(10px);
+				font-size: rem(28px);
+			}
+		}
+		&-desc {
+			text-align: center;
+			font-size: rem(16px);
+			font-weight: 400;
+			color: #a0a0a5;
+			margin: 0;
+			padding: 0;
+			margin-bottom: rem(40px);
+			@media (max-width: 768px) {
+				margin-bottom: rem(20px);
+				font-size: rem(14px);
+			}
+		}
+		.Logo {
+			display: inline-block;
+			margin: 0 auto;
+			margin-bottom: rem(25px);
+			text-align: center;
+			padding: 0;
+			width: 100%;
+			a {
+				width: auto;
+				display: inline-block;
+			}
+		}
+		&-bottom {
+			margin-top: rem(55px);
+		}
+	}
+	&__form {
+		&-item {
+			margin-bottom: rem(30px);
+			label {
+				font-size: rem(14px);
+				font-weight: bold;
+				margin: 0;
+				padding: 0;
+				margin-bottom: rem(6px);
+				color: $dark;
+				display: block;
+				width: 100%;
+			}
+			input {
+				width: rem(480px);
+				max-width: 100%;
+				border: rem(1px) solid #e1e6ef;
+				border-radius: rem(8px);
+				background-color: $light;
+				color: $dark;
+				height: rem(55px);
+				padding: rem(10px) rem(20px);
+				@media (max-width: 991px) {
+					width: 100%;
+				}
+				&::placeholder {
+					font-size: rem(12px);
+					font-weight: 600;
+					color: rgba(29, 36, 51, 0.3);
+				}
+				&[type="password"] {
+					padding-left: rem(50px);
+				}
+			}
+		}
+		&-submit {
+			margin-top: rem(30px);
+			width: 100%;
+			height: rem(55px);
+			border-radius: rem(70px);
+			color: $light;
+			font-size: rem(15px);
+			font-weight: bold;
+			background-color: $secondary;
+			border: 0 none;
+			box-shadow: 0 rem(4px) rem(25px) rgba(255, 116, 85, 0.3);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			cursor: pointer;
+			transition: all 250ms ease-in-out;
+			&:hover {
+				background-color: rgba(234, 175, 58, 0.91);
+				.LoginForm__submit-icon {
+					background-color: $light;
+					color: $secondary;
+					margin-right: rem(30px);
+				}
+			}
+		}
+	}
+	&__submit {
+		&-icon {
+			width: rem(30px);
+			height: rem(30px);
+			display: flex;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: rem(35px);
+			padding: 0;
+			background-color: $secondary;
+			color: $light;
+			margin-right: rem(5px);
+			transition: all 250ms ease-in-out;
+			svg {
+				width: rem(10px);
+				height: rem(10px);
+				object-fit: contain;
+				object-position: center;
+			}
+		}
+	}
+	&__bottom {
+		&-title {
+			color: $primary;
+			font-size: rem(16px);
+			font-weight: bold;
+			margin: 0;
+			padding: 0;
+			margin-bottom: rem(5px);
+		}
+		&-desc {
+			font-size: rem(12px);
+			font-weight: 400;
+			color: #a0a0a5;
+			margin-bottom: rem(20px);
+		}
+		&-info {
+			width: rem(477px);
+			max-width: 100%;
+			ul {
+				padding: 0;
+				margin: 0;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				list-style-type: none;
+				@media (max-width: 768px) {
+					display: block;
+				}
+				li {
+					flex: 1;
+					@media (max-width: 768px) {
+						width: 100%;
+					}
+					&:first-of-type {
+						margin-left: rem(15px);
+						@media (max-width: 768px) {
+							margin: 0;
+							margin-bottom: rem(15px);
+						}
+					}
+					a {
+						display: flex;
+						align-items: center;
+						height: rem(90px);
+						border-radius: rem(14px);
+						background-color: #fffbf4;
+						justify-content: space-between;
+						padding: rem(20px);
+						cursor: pointer;
+						border: rem(1px) solid #fffbf4;
+						transition: all 250ms ease-in-out;
+						@media (max-width: 768px) {
+							width: 100%;
+							padding: rem(10px);
+							height: auto;
+						}
+						&:hover {
+							border-color: #ff7455;
+							svg {
+								color: white;
+								transition: all 250ms ease-in-out;
+								circle {
+									fill: #dba02a;
+									transition: all 250ms ease-in-out;
+								}
+							}
+						}
+						div {
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+						}
+						h3 {
+							font-size: rem(12px);
+							font-weight: 400;
+							color: #a0a0a5;
+							margin: 0;
+							margin-bottom: rem(3px);
+						}
+						p {
+							font-size: rem(14px);
+							font-weight: 400;
+							color: $dark;
+							padding: 0;
+							margin: 0;
+						}
+						svg {
+							width: rem(40px);
+							height: rem(40px);
+							object-fit: contain;
+							object-position: center;
+							margin-right: 0;
+							transition: all 250ms ease-in-out;
+							color: $secondary;
+							circle {
+								fill: #fff1d6;
+								opacity: 1;
+								transition: all 250ms ease-in-out;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.Password {
+	&__container {
+		position: relative;
+		&-button {
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			background-color: transparent;
+			border: 0 none;
+			color: #c8c8ce;
+			width: rem(50px);
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			display: flex;
+			padding: 0;
+			&.is--open {
+				&:after {
+					content: "";
+					background-color: currentColor;
+					width: rem(2px);
+					height: rem(22px);
+					position: absolute;
+					z-index: 0;
+					transform: rotate(56deg);
+				}
+			}
+			svg {
+				width: rem(24px);
+				height: rem(24px);
+				object-fit: contain;
+				object-position: center;
+				fill: none;
+			}
+		}
+	}
+}

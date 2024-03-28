@@ -1,0 +1,63 @@
+.TextareaField{
+
+	&__label{
+		font-size: rem(14px);
+		font-weight: 600;
+		margin: 0;
+		padding: 0;
+		margin-bottom: rem(6px);
+	}
+
+	&__field{
+
+		position: relative;
+		width: 100%;
+		height: rem(105px);
+		margin: 0;
+		max-width: 100%;
+
+		textarea{
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			border-radius: rem(8px);
+			background-color: $light;
+			border: 1px solid $border-color;
+			font-size: rem(12px);
+			font-weight: 400;
+			color: $dark;
+			box-shadow: none;
+			padding: rem(15px);
+			resize: none;
+			&::placeholder{
+				font-size: rem(12px);
+				font-weight: 400;
+				color: rgba(29, 36, 51, 0.6);
+			}
+		}
+	}
+
+	&--small{
+		.TextareaField{
+			&__field{
+				height: rem(36px);
+				input{
+					width: rem(230px);
+					border-radius: rem(12px);
+					box-shadow: 0 rem(7px) rem(10px) rgba(0,0,0,0.03);
+					@media (max-width: 991px) {
+						width: 100%;
+					}
+				}
+				button{
+					top: rem(6px);
+					left: rem(6px);
+					width: rem(24px);
+					height: rem(24px);
+				}
+			}
+		}
+	}
+
+}

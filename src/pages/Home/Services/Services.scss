@@ -1,0 +1,151 @@
+html .Services{
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	z-index: 2;
+	margin-top: rem(-100px);
+	overflow: hidden;
+	padding: 0 rem(40px);
+	@media (max-width: 991px) {
+		margin-top: rem(-65px);
+		padding: 0 rem(10px);
+	}
+	&__slider{
+		width: 100%;
+		padding: 0 0 rem(30px);
+		@media (max-width: 780px) {
+			overflow: visible;
+			padding-left: rem(150px);
+		}
+		.swiper-slide{
+			width: 100%;
+			height: auto;
+		}
+		.swiper-pagination{
+			bottom: rem(-7px);
+			.swiper-pagination-bullet{
+				width: rem(10px);
+				height: rem(10px);
+				background-color: $gray-400;
+				opacity: 1;
+				&.swiper-pagination-bullet-active{
+					background-color: $primary;
+				}
+			}
+		}
+	}
+}
+
+.Card {
+	&__service{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		background-color: white;
+		border-radius: rem(15px);
+		border: rem(1px) solid $border-color;
+		box-shadow: 0px rem(8px) rem(24px) 0 rgba(0, 0, 0, 0.03);
+		min-height: rem(180px);
+		cursor: pointer;
+		padding-top: rem(35px);
+		overflow: hidden;
+		transition: all 250ms ease-in-out;
+		&:after{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+			opacity: 0;
+			transition: all 250ms ease-in-out;
+		}
+		&.is--info{
+			&:after{
+				background-color: #664EFA;
+			}
+			&:hover{
+				&:after{
+					opacity: 0.1;
+				}
+				.Card__arrow{
+					color: #664EFA;
+				}
+			}
+		}
+		&.is--green{
+			&:after{
+				background-color: #688137;
+			}
+			&:hover{
+				&:after{
+					opacity: 0.1;
+				}
+				.Card__arrow{
+					color: #688137;
+				}
+			}
+		}
+		&.is--success{
+			&:after{
+				background-color: #31BEAF;
+			}
+			&:hover{
+				&:after{
+					opacity: 0.1;
+				}
+				.Card__arrow{
+					color: #31BEAF;
+				}
+			}
+		}
+		&.is--warning{
+			&:after{
+				background-color: $secondary;
+			}
+			&:hover{
+				&:after{
+					opacity: 0.1;
+				}
+				.Card__arrow{
+					color: $secondary;
+				}
+			}
+		}
+		figure{
+			margin: 0;
+			padding: 0;
+			margin-bottom: rem(5px);
+			img,
+			svg{
+				display: block;
+				width: rem(65px);
+				height: rem(65px);
+				object-position: center;
+				object-fit: contain;
+			}
+		}
+		.Card__main{
+			position: relative;
+			p{
+				padding: 0;
+				margin: 0;
+				font-size: rem(18px);
+				font-weight: 600;
+				transition: all 250ms ease-in-out;
+			}
+		}
+		&:hover{
+			padding-top: rem(25px);
+			.Card__arrow{
+				opacity: 1;
+			}
+		}
+	}
+}
+

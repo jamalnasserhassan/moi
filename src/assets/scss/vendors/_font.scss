@@ -1,0 +1,52 @@
+$name: "BahijTheSansArabic";
+$path: "../fonts";
+
+@font-face {
+  	font-family: 'Bahij TheSansArabic';
+  	src: url('#{$path}/#{$name}-Light.woff2') format('woff2'),
+			url('#{$path}/#{$name}-Light.woff') format('woff'),
+			url('#{$path}/#{$name}-Light.svg##{$name}-Light') format('svg');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Bahij TheSansArabic';
+	src: url('#{$path}/#{$name}-Plain.woff2') format('woff2'),
+		  url('#{$path}/#{$name}-Plain.woff') format('woff'),
+		  url('#{$path}/#{$name}-Plain.svg##{$name}-Plain') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+	font-family: 'Bahij TheSansArabic';
+	src: url('#{$path}/#{$name}-SemiBold.woff2') format('woff2'),
+		  url('#{$path}/#{$name}-SemiBold.woff') format('woff'),
+		  url('#{$path}/#{$name}-SemiBold.svg##{$name}-SemiBold') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+	font-family: 'Bahij TheSansArabic';
+	src: url('#{$path}/#{$name}-Bold.woff2') format('woff2'),
+		  url('#{$path}/#{$name}-Bold.woff') format('woff'),
+		  url('#{$path}/#{$name}-Bold.svg##{$name}-Bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+	font-family: 'Bahij TheSansArabic';
+	src: url('#{$path}/#{$name}-Black.woff2') format('woff2'),
+		  url('#{$path}/#{$name}-Black.woff') format('woff'),
+		  url('#{$path}/#{$name}-Black.svg##{$name}-Black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
