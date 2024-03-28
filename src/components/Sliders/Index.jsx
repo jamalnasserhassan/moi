@@ -1,6 +1,5 @@
 // swiperInit.js
 import Swiper from 'swiper';
-import { Pagination, Navigation, EffectFade, Autoplay } from 'swiper/modules';
 
 export function initializeSlider(selector, options = {}) {
   const defaultOptions = {
@@ -11,8 +10,7 @@ export function initializeSlider(selector, options = {}) {
 
   // Explicitly import Pagination module here
   const swiperInstance = new Swiper(selector, {
-    ...mergedOptions,
-    modules: [Pagination, EffectFade, Navigation, Autoplay],
+    ...mergedOptions
   });
 
   return swiperInstance;

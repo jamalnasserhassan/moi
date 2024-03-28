@@ -1,5 +1,4 @@
 import { Suspense, lazy } from 'react';
-import Tour from './Tour/Index';
 
 const Hero = lazy(() => import("./Hero/Index"));
 const News = lazy(() => import("./News/Index"));
@@ -20,10 +19,6 @@ function Home() {
 			</Suspense>
 			<Suspense>
 				<News/>
-			</Suspense>
-
-			<Suspense>
-				<Tour/>
 			</Suspense>
 
 		</>

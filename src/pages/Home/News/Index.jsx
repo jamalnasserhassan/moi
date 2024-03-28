@@ -8,19 +8,24 @@ function News() {
   useEffect(() => {
     // News Slider
 	const newSlider = initializeSlider('.News__slider', {
-		slidesPerView: 1,
 		spaceBetween: 20,
 		loop: true,
+		slidesPerView: 3,
 		breakpoints: {
-			1199: {
+			600: {
+				slidesPerView: 1
+			},
+			790: {
+				slidesPerView: 2
+			},
+			1200: {
 				slidesPerView: 3,
+				spaceBetween: 10
 			},
-			991: {
-				slidesPerView: 2,
+			1900: {
+				slidesPerView: 3,
+				spaceBetween: 20
 			},
-			767: {
-				slidesPerView: 2,
-			}
 		},
 		pagination: {
 			el: '.Paginatio__News',

@@ -8,22 +8,21 @@ function Services() {
 	useEffect(() => {
 		// Services Slider
 		const serviceSlider = initializeSlider('.Services__slider', {
-			slidesPerView: 1,
 			spaceBetween: 20,
 			loop: false,
+			slidesPerView: 4,
 			breakpoints: {
-				1199: {
+				790: {
+					slidesPerView: 1
+				},
+				1200: {
+					slidesPerView: 3,
+					spaceBetween: 10
+				},
+				1900: {
 					slidesPerView: 4,
+					spaceBetween: 20
 				},
-				991: {
-					slidesPerView: 2,
-				},
-				767: {
-					slidesPerView: 2,
-				},
-				320: {
-					slidesPerView: 1,
-				}
 			},
 			pagination: {
 				el: '.Pagination__service',
