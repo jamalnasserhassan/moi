@@ -77,7 +77,7 @@ const routesTree = () => {
 				element: <News />,
 				children: [
 				{
-					path: ":id",
+					path: "new",
 					element: <NewsItem />,
 				},
 				],

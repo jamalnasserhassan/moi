@@ -1,5 +1,5 @@
 // Vendors
-@import './vendors/font';
+@import "./vendors/font";
 
 @import "bootstrap/scss/utilities";
 
@@ -23,20 +23,21 @@
 
 // Vendors
 @import "./vendors/bootstrap-override";
-@import 'swiper/dist/css/swiper.min.css';
+@import "swiper/dist/css/swiper.min.css";
 
 // Layout
-@import './layout/page';
-@import './layout/content';
-@import './layout/section';
-@import './layout/sidebar';
-@import './layout/modal';
+@import "./layout/page";
+@import "./layout/content";
+@import "./layout/section";
+@import "./layout/sidebar";
+@import "./layout/modal";
 
 // Global
-@import './global/chart';
-@import './global/button';
-@import './global/card';
-@import './global/forms';
+@import "./global/chart";
+@import "./global/button";
+@import "./global/card";
+@import "./global/forms";
+@import "./global/svg";
 
 // Helper
-@import './helper/index';
+@import "./helper/index";

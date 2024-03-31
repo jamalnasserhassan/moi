@@ -1,0 +1,126 @@
+.Sidebar {
+	&__news {
+		.Sidebar__content {
+			min-width: rem(710px);
+			@media (max-width: 991px) {
+				min-width: 40%;
+			}
+			&-header {
+				height: rem(70px);
+				padding: rem(20px);
+				h6 {
+					font-size: rem(16px);
+					font-weight: bold;
+				}
+				button {
+					background-color: #fafafc;
+					border-radius: rem(34px);
+					width: rem(34px);
+					height: rem(34px);
+					color: $dark;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					text-align: center;
+					transition: all 250ms ease-in-out;
+					svg {
+						display: block;
+						width: rem(11px);
+						height: rem(11px);
+						object-fit: contain;
+						object-position: center;
+					}
+					&:hover {
+						background-color: $dark;
+						color: $light;
+					}
+				}
+			}
+			&-top {
+				position: relative;
+				width: 100%;
+				height: rem(320px);
+				display: flex;
+				align-items: flex-end;
+				padding: 0 rem(60px) rem(30px) rem(20px);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-image: url("/images/news.png");
+				@media (max-width: 991px) {
+					padding: 0 rem(20px) rem(20px);
+					height: rem(240px);
+				}
+				img {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: center;
+					z-index: 1;
+				}
+				.overlay {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-color: rgba(0, 0, 0, 0.36);
+					box-shadow: inset 0 -110px 107px -47px rgba(0, 0, 0, 0.9);
+					z-index: 2;
+				}
+				h1 {
+					position: relative;
+					z-index: 10;
+					font-size: rem(18px);
+					font-weight: bold;
+					max-width: 560px;
+					color: white;
+					padding: 0;
+					margin: 0;
+					line-height: initial;
+				}
+			}
+			&-scroll {
+				padding-bottom: rem(20px);
+				height: calc(100% - 415px);
+				@media (max-width: 991px) {
+					height: calc(100% - 313px);
+				}
+			}
+			&-content {
+				padding: rem(30px) rem(60px) rem(30px) rem(20px);
+				@media (max-width: 991px) {
+					padding: rem(20px);
+				}
+				.time {
+					display: inline-flex;
+					align-items: center;
+					margin-bottom: rem(10px);
+					span {
+						padding: 0;
+						margin: 0;
+						margin-right: rem(8px);
+						font-size: rem(14px);
+						font-weight: 300;
+					}
+					svg {
+						width: rem(20px);
+						height: rem(20px);
+					}
+				}
+				p {
+					max-width: rem(600px);
+					padding: 0;
+					margin: 0;
+					margin-bottom: rem(15px);
+					font-size: rem(18px);
+					font-weight: 400;
+					line-height: initial;
+				}
+			}
+		}
+	}
+}

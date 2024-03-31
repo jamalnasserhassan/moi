@@ -13,6 +13,7 @@ html .Services{
 	&__slider{
 		width: 100%;
 		padding: 0 0 rem(30px);
+		overflow: hidden;
 		@media (max-width: 780px) {
 			overflow: visible;
 			padding-left: rem(150px);
