@@ -6,7 +6,7 @@ const NewsItem = lazy(() => import("../../News/NewsItem/index"));
 const New = lazy(() => import("./NewsCard/Index"));
 
 function News() {
-	// Handle User Profile
+	// Handle Single News
 	const [isNewsDetailsOpen, setIsNewsDetailsOpen] = useState(false);
 	useEffect(() => {
 		if (isNewsDetailsOpen) {
@@ -87,10 +87,18 @@ function News() {
 					<div className="News__container-content">
 						<div className="News__slider swiper">
 							<div className="swiper-wrapper">
-								<New toggleSidebar={toggleUserNews} />
-								<New toggleSidebar={toggleUserNews} />
-								<New toggleSidebar={toggleUserNews} />
-								<New toggleSidebar={toggleUserNews} />
+								<div className="swiper-slide">
+									<New toggleSidebar={toggleUserNews} />
+								</div>
+								<div className="swiper-slide">
+									<New toggleSidebar={toggleUserNews} />
+								</div>
+								<div className="swiper-slide">
+									<New toggleSidebar={toggleUserNews} />
+								</div>
+								<div className="swiper-slide">
+									<New toggleSidebar={toggleUserNews} />
+								</div>
 							</div>
 							<div className="swiper-pagination Paginatio__News"></div>
 						</div>
